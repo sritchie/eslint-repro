@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "curve-fit"
+version = "0.1.0"
+description = "Curve Fit Demonstration for GenJAX"
+authors = ["Colin Smith <colin.smith@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12.3, <3.13"
+genjax = { version = "0.3.1.post258.dev0+b103dee7", source = "gcp" }
+jax = { version="^0.4.28", extras = ["cpu"] }
+matplotlib = "^3.9.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.1"
+nbmake = "^1.5.3"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.12.3"
+include = ["src", "notebooks"]
+
+[[tool.poetry.source]]
+name = "gcp"
+url = "https://us-west1-python.pkg.dev/probcomp-caliban/probcomp/simple/"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,10 @@
+repos:
+  - repo: local
+    hooks:
+    - id: eslint
+      name: eslint
+      language: node
+      additional_dependencies:
+      - eslint@9.3.0
+      - globals@15.3.0
+      entry: ./run_eslint.sh
